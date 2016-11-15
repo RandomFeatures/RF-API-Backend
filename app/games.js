@@ -4,7 +4,7 @@ var router = express.Router();
 
 //get all games
 router.get('/', function (req, res) {
-	res.send(gamesDBO);
+	res.type('json').status(200).send(gamesDBO);
 });
 
 //get specific item by id
@@ -15,7 +15,7 @@ router.get('/id/:id', function (req, res) {
 		})[0];
  
 	if (game != null)
-		res.status(200).send(game);
+		res.type('json').status(200).send(game);
 	else
 		res.status(404).send('404: Resource not Found');
 
@@ -29,7 +29,7 @@ router.get('/:name', function (req, res) {
 		})[0];
 
 	if (game != null)
-		res.status(200).send(game);
+		res.type('json').status(200).send(game);
 	else
 		res.status(404).send('404: Resource not Found');
 

@@ -4,7 +4,8 @@ var router = express.Router();
 
 //get all news items 
 router.get('/', function (req, res) {
-	res.send(newsDBO);
+	console.log('News Request');
+	res.type('json').status(200).send(newsDBO);
 });
 
 //get specific item by id
@@ -15,7 +16,7 @@ router.get('/:id', function (req, res) {
 		})[0];
 
 	if (newsItem != null)
-		res.status(200).send(newsItem);
+		res.type('json').status(200).send(newsItem);
 	else
 		res.status(404).send('404: Resource not Found');
 

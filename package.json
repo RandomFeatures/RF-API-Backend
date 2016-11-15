@@ -11,6 +11,7 @@
   "author": "Allen <allen@random-features.net>",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.1",
     "express": "^4.14.0"
   }
 }
