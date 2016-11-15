@@ -2,7 +2,7 @@ var express = require('express');
 var newsDBO = require("./data/news.json");
 var router = express.Router();
 
-//get all news items in desinding order
+//get all news items 
 router.get('/', function (req, res) {
 	res.send(newsDBO);
 });
@@ -14,7 +14,10 @@ router.get('/:id', function (req, res) {
 			return obj.id == req.params.id;
 		})[0];
 
-	res.send(newsItem);
+	if (newsItem != null)
+		res.status(200).send(newsItem);
+	else
+		res.status(404).send('404: Resource not Found');
 
 });
 
