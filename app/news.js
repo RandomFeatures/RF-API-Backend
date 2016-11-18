@@ -4,7 +4,6 @@ var router = express.Router();
 
 //get all news items 
 router.get('/', function (req, res) {
-	console.log('News Request');
 	res.type('json').status(200).send(newsDBO);
 });
 

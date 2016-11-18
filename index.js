@@ -1,17 +1,14 @@
 var express = require('express');
 var games = require('./app/games');
 var news = require('./app/news');
-var wallpapers = require('./app/wallpapers');
 var cors = require('cors')
 var app = express();
 
 //CORS middleware
 app.use(cors())
 
-
 app.use('/api/games', games);
 app.use('/api/news', news);
-app.use('/api/wallpapers', wallpapers);
 
 // Handle 404 error.
 app.use("*", function (req, res) {
